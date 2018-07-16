@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <!-- Link Exercício: https://github.com/RocketSeat/curso-javascript-do-zero/blob/master/tarefas/modulo02.md -->
+    <div id="app">
+        <button id="botao"></button>
+    </div>
+    <script>
+        var btnElement = document.querySelector('#botao');
+
+        var textButton = document.createTextNode('Criar Elemento');
+        btnElement.appendChild(textButton);
+
+        btnElement.onclick = function () {
+            var boxElement = document.createElement('div');
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.backgroundColor = '#f00';
+            boxElement.style.margin = '10px';
+
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(boxElement);
+
+            boxElement.onmouseover = function() {
+                boxElement.style.backgroundColor = getRandomColor();    
+            }
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        }
+        
+    </script>
+</body>
+</html>

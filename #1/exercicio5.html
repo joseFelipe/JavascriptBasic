@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Exercicio 5</title>
+</head>
+<body>
+        
+    Dado o seguinte vetor de objetos:<br><br>
+
+    var usuarios = [<br>
+    {<br>
+        nome: 'Diego',<br>
+        habilidades: ['Javascript', 'ReactJS', 'Redux']<br>
+    },<br>
+    {<br>
+        nome: 'Gabriel',<br>
+        habilidades: ['VueJS', 'Ruby on Rails', 'Elixir']<br>
+    }<br>
+    ];<br>
+    Escreva uma função que produza o seguinte resultado:<br><br>
+
+    O Diego possui as habilidades: Javascript, ReactJS, Redux<br>
+    O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir
+
+    <script>
+        var usuarios = [
+            {
+                nome: 'Felipe',
+                habilidades: ['Javascript', 'ReactJS', 'Redux']
+            },
+            {
+                nome: 'Duwe',
+                habilidades: ['Javascript', 'Delphi', 'PHP']
+            }
+        ];
+
+        showUserSkills(usuarios);
+
+        function showUserSkills(usuarios) {            
+            for (var i = 0; usuarios.length; i++) {
+                console.log('O', usuarios[i].nome, 'possui as habilidades:', usuarios[i].habilidades.join(', '));
+            }        
+        }
+    </script>
+</body>
+</html>

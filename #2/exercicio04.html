@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <!-- Link Exercício: https://github.com/RocketSeat/curso-javascript-do-zero/blob/master/tarefas/modulo02.md -->
+    <div id="app"></div>
+        <input type="text" name="nome" />
+        <button onclick="adicionar(inputElement.value)">Adicionar</button>
+    
+    <script>
+        var inputElement = document.querySelector('input[name=nome]');
+        var listElement = document.createElement('ul');
+        var nomes = ['Felipe', 'Monique', 'Loki'];
+
+        nomes.forEach(element => {
+            var item = document.createElement('li');
+
+            item.appendChild(document.createTextNode(element));
+
+            listElement.appendChild(item);
+        });
+
+        function listAll() {
+            nomesNovos.forEach(element => {
+                var item = document.createElement('li');
+
+                item.appendChild(document.createTextNode(element));
+
+                listElement.appendChild(item);
+
+                nomesNovos = [];
+            });
+        }
+
+        var nomesNovos = [];
+        function adicionar(text) {
+
+            if (text != '') {
+                nomesNovos.push(text);
+            }
+            inputElement.value = '';            
+            listAll();
+        }
+
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(listElement);
+
+    </script>
+</body>
+</html>

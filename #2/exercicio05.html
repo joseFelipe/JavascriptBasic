@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <!-- Link Exercício: https://github.com/RocketSeat/curso-javascript-do-zero/blob/master/tarefas/modulo02.md -->
+    <div id="app"></div>
+        <button onclick="orderByName()">Ordernar Por Nome</button>
+        <button onclick="orderByAge()">Ordernar Por Idade</button>
+        <button onclick="showMan()">Exibir Apenas Homens</button>
+        <button onclick="showWoman()">Exibir Apenas Mulheres</button>
+        <button onclick="showAll()">Exibir Todos</button>
+    
+    <script>
+        var inputElement = document.querySelector('input[name=nome]');
+        var listElement = document.createElement('ul');
+        var users = [
+                {
+                    nome: 'Diego',
+                    idade: 23,
+                    sexo: 'M',
+                },
+                {
+                    nome: 'Gabriela',
+                    idade: 18,
+                    sexo: 'F',
+                },
+                {
+                    nome: 'José',
+                    idade: 30,
+                    sexo: 'M',
+                },
+                {
+                    nome: 'Maria',
+                    idade: 27,
+                    sexo: 'F',
+                },
+                {
+                    nome: 'Amabile',
+                    idade: 14,
+                    sexo: 'F',
+                }
+            ];
+        
+        users.forEach(element => {
+            var sexo = element['sexo'];
+            sexo = sexo == 'M' ? 'homem' : 'mulher';
+
+            element = element['nome'] + ' é ' + sexo + ' e possui ' + element['idade'] + ' anos';
+            var item = document.createElement('li');
+            
+            item.appendChild(document.createTextNode(element));
+
+            listElement.appendChild(item);
+        });
+
+        function orderByName() {
+            order('name');
+        }
+
+        function listAll() {
+            nomesNovos.forEach(element => {
+                var item = document.createElement('li');
+
+                item.appendChild(document.createTextNode(element));
+
+                listElement.appendChild(item);
+
+                nomesNovos = [];
+            });
+        }
+        
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(listElement);
+
+    </script>
+</body>
+</html>

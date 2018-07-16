@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <!-- Link Exercício: https://github.com/RocketSeat/curso-javascript-do-zero/blob/master/tarefas/modulo02.md -->
+    <div id="app"></div>
+    <script>
+        var nomes = ['Felipe', 'Monique', 'Loki'];
+
+        var listElement = document.createElement('ul');
+        
+        nomes.forEach(element => {
+            var item = document.createElement('li');
+
+            item.appendChild(document.createTextNode(element));
+
+            listElement.appendChild(item);
+        });
+
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(listElement);
+
+    </script>
+</body>
+</html>

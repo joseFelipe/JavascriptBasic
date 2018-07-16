@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <div id="app">
+        <button id="botao"></button>
+        <div id="box"></div>
+    </div>
+    <script>
+        var btnElement = document.querySelector('#botao');
+
+        var textButton = document.createTextNode('Criar Elemento');
+        btnElement.appendChild(textButton);
+
+        btnElement.onclick = function () {
+            var boxElement = document.createElement('div');
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.backgroundColor = '#f00';
+            boxElement.style.margin = '10px';
+
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(boxElement);            
+        }
+    </script>
+</body>
+</html>
